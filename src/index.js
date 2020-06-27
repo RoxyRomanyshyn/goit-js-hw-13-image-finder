@@ -26,6 +26,7 @@ function onSubmit(e) {
 function onGetData(data) {
   if (data.hits.length > 0) {
     printList(data.hits);
+    btnLoad.style.display = 'inline-block';
   } else {
     onError(data);
   }
@@ -39,6 +40,7 @@ function onGetData(data) {
       left: 100,
       behavior: 'smooth'
     });
+
   }
 }
 
