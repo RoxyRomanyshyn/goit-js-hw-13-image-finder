@@ -1,9 +1,7 @@
 import './styles.css';
 import searchApi from './apiService.js';
 import photoCard from './templates/card.hbs';
-import {
-  error
-} from '@pnotify/core';
+import { error } from '@pnotify/core';
 
 const gallery = document.querySelector('.gallery');
 const btnLoad = document.querySelector('.load-btn');
@@ -29,18 +27,18 @@ function onGetData(data) {
     btnLoad.style.display = 'inline-block';
   } else {
     onError(data);
+    btnLoad.style.display = 'none';
   }
   if (page === 1) {
     window.scrollBy({
       top: 0,
-    })
+    });
   } else {
     window.scrollBy({
       top: 800,
       left: 100,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
-
   }
 }
 
